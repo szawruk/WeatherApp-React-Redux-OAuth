@@ -1,10 +1,9 @@
 import React from 'react';
-import axios from 'axios';
-
-import Header from './Header';
-import ActualCity from './ActualCity';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
+
+import Header from './Header';
+import Dashboard from './Dashboard';
 
 class App extends React.Component {
 
@@ -16,7 +15,7 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
-                <ActualCity />
+                <Dashboard />
             </div>
         )
     }

@@ -1,15 +1,18 @@
 const express = require('express');
-const app = express();
+
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 require('./models/User');
-require('./routes')(app);
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true });
+
+const app = express();
+app.use(bodyParser.json());
 
 // cookieSession config
 app.use(cookieSession({
@@ -20,6 +23,7 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session()); //that changes the user value
 
+require('./routes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
