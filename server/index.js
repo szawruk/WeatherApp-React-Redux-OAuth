@@ -3,6 +3,7 @@ const app = express();
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');
+const mongoose = require('mongoose');
 
 require('./models/User');
 require('./routes')(app);
@@ -16,7 +17,7 @@ app.use(cookieSession({
 }));
 
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session()); //that changes the user value
 
 
 const PORT = process.env.PORT || 5000;
