@@ -1,0 +1,49 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+.header {
+    width: calc(100% - 20px);
+    height: 80px;
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.header_app{
+    flex: 1;
+}
+
+.header_list {
+    flex: 4;
+}
+
+.header_date {
+    flex: 2;
+}
+
+.header_city {
+    flex: 4;
+}
+
+.header_login {
+    flex: 2;
+}
+
+.header .box {
+    border: 3px solid red;
+    padding: 5px;
+    margin: 0px 10px;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}

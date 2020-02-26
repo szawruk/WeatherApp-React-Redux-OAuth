@@ -1,13 +1,29 @@
 import React from 'react';
+import axios from 'axios';
 
-class App extends React.Component{
-    render(){
-        return(
+import Header from './Header';
+
+class App extends React.Component {
+
+    componentDidMount() {
+        this.fetchData();
+    }
+
+    async fetchData() {
+        const response = await axios.get('/info');
+        console.log(response.data);
+    }
+
+
+    render() {
+        return (
             <div>
-                <p>Witaj w aplikacji pogodowej!</p>
+                <Header />
             </div>
         )
     }
+
+
 }
 
 export default App;
