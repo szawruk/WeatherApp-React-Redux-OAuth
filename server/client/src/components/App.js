@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Header from './Header';
+import ActualCity from './ActualCity';
 
 class App extends React.Component {
 
@@ -19,6 +20,7 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
+                <ActualCity />
             </div>
         )
     }
