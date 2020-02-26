@@ -1,9 +1,33 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 import '../styles/header.scss'
 
 class Header extends React.Component {
 
+    renderLoginContent() {
+        switch (this.props.auth) {
+            case null: {
+                return;
+            }
+
+            case false: {
+                return (
+                    <div className='box header_login'>
+                        <a href='/auth/google'>Login with Google</a>
+                    </div>);
+
+            }
+
+            default: {
+                return (
+                    <div className='box header_login'>
+                        <a href='/api/logout'>Logout</a>
+                    </div>
+                )
+            }
+        }
+    }
 
     render() {
         return (
@@ -20,12 +44,16 @@ class Header extends React.Component {
                 <div className='box header_city'>
                     city
                 </div>
-                <div className='box header_login'>
-                    login
-                </div>
+                {this.renderLoginContent()}
             </div>
         )
     }
 }
 
-export default Header;
+function mapStateToProps(state) {
+    return {
+        auth: state.auth
+    }
+}
+
+export default connect(mapStateToProps)(Header);

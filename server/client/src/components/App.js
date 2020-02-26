@@ -3,18 +3,14 @@ import axios from 'axios';
 
 import Header from './Header';
 import ActualCity from './ActualCity';
+import * as actions from '../actions';
+import { connect } from 'react-redux';
 
 class App extends React.Component {
 
     componentDidMount() {
-        this.fetchData();
+        this.props.fetchUser();
     }
-
-    async fetchData() {
-        const response = await axios.get('/info');
-        console.log(response.data);
-    }
-
 
     render() {
         return (
@@ -28,4 +24,4 @@ class App extends React.Component {
 
 }
 
-export default App;
+export default connect(null, actions)(App);

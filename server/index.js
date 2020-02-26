@@ -9,6 +9,7 @@ require('./models/User');
 require('./routes')(app);
 require('./services/passport');
 
+mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true });
 
 // cookieSession config
 app.use(cookieSession({
