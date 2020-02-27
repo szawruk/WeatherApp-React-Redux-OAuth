@@ -29,15 +29,33 @@ class Header extends React.Component {
         }
     }
 
+    renderListContent() {
+        switch (this.props.auth) {
+            case null: {
+                return;
+            }
+
+            case false: {
+                return;
+            }
+
+            default: {
+                return (
+                    <div className='box header_list'>
+                        list
+                </div>
+                )
+            }
+        }
+    }
+
     render() {
         return (
             <div className='header'>
                 <div className='box header_app'>
                     app_name
                 </div>
-                <div className='box header_list'>
-                    list
-                </div>
+                {this.renderListContent()}
                 <div className='box header_date'>
                     date
                 </div>
