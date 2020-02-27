@@ -12,6 +12,6 @@ export const fetchUser = () => async dispatch => {
 export const setCity = (newCity) => {
     return {
         type: SET_CITY,
-        payload: newCIty
+        payload: newCity
     }
 }

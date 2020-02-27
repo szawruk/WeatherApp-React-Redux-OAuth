@@ -21,7 +21,6 @@ class Header extends React.Component {
             }
 
             default: {
-                console.log(this.props.auth)
                 return (
                     <div className='box header_login'>
                         <a href='/api/logout'>Logout</a>
