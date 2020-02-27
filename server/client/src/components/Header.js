@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
+import CitiesList from './CitiesList';
 import '../styles/header.scss'
 
 class Header extends React.Component {
@@ -20,6 +21,7 @@ class Header extends React.Component {
             }
 
             default: {
+                console.log(this.props.auth)
                 return (
                     <div className='box header_login'>
                         <a href='/api/logout'>Logout</a>
@@ -43,10 +45,14 @@ class Header extends React.Component {
                 return (
                     <div className='box header_list'>
                         list
-                </div>
+                    </div>
                 )
             }
         }
+    }
+
+    renderListContentHelper() {
+
     }
 
     render() {
