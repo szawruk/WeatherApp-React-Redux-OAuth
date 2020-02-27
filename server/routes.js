@@ -22,4 +22,15 @@ module.exports = (app) => {
     app.get('/api/current_user', (req, res) => {
         res.send(req.user);
     })
+
+    //addCity route
+    app.post('/api/cities', async (req, res) => {
+
+        //req.user.cityList.push(req.body.city);
+        console.log(req.user);
+        const user = await req.user.save();
+        res.send(user);
+
+
+    })
 }
