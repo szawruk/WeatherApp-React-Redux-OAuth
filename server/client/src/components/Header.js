@@ -45,7 +45,7 @@ class Header extends React.Component {
             default: {
                 return (
                     <div className='box header_list'>
-                        list
+                        {<CitiesList />}
                     </div>
                 )
             }
