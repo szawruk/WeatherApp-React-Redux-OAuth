@@ -2,9 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 import CitiesList from './CitiesList';
+import InputCity from './InputCity';
 import '../styles/header.scss'
 
 class Header extends React.Component {
+
 
     renderLoginContent() {
         switch (this.props.auth) {
@@ -54,6 +56,7 @@ class Header extends React.Component {
 
     }
 
+
     render() {
         return (
             <div className='header'>
@@ -65,7 +68,7 @@ class Header extends React.Component {
                     date
                 </div>
                 <div className='box header_city'>
-                    city
+                    <InputCity />
                 </div>
                 {this.renderLoginContent()}
             </div>
