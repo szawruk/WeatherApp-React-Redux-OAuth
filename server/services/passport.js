@@ -12,9 +12,12 @@ passport.serializeUser((user, done) => {
 });
 
 // Used to decode the received cookie and persist session
-passport.deserializeUser((user, done) => {
-    done(null, user);
-});
+passport.deserializeUser((id, done) => {
+    User.findById(id)
+        .then(user => {
+            done(null, user);
+        })
+})
 
 passport.use(new GoogleStrategy({
 
@@ -28,7 +31,7 @@ passport.use(new GoogleStrategy({
     if (existingUser) {
         return done(null, existingUser);
     }
-    const user = await new User({ googleId: profile.id }).save();
+    const user = await new User({ googleId: profile.id, cityList: [] }).save();
     done(null, user);
 
 }

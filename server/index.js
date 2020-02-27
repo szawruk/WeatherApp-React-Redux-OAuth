@@ -1,5 +1,4 @@
 const express = require('express');
-
 const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const passport = require('passport');
@@ -12,6 +11,7 @@ require('./services/passport');
 mongoose.connect(keys.mongoURI, { useUnifiedTopology: true, useNewUrlParser: true });
 
 const app = express();
+
 app.use(bodyParser.json());
 
 // cookieSession config
