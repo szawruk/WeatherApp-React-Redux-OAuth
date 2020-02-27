@@ -61,7 +61,7 @@ class Header extends React.Component {
         return (
             <div className='header'>
                 <div className='box header_app'>
-                    app_name
+                    Simon Weather
                 </div>
                 {this.renderListContent()}
                 <div className='box header_date'>

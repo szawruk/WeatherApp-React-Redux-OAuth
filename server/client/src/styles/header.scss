@@ -1,6 +1,7 @@
 * {
 margin: 0;
 padding: 0;
+box-sizing: border-box;
 }
 
 .header {
@@ -18,7 +19,7 @@ padding: 0;
 }
 
 .header_app{
-    flex: 1;
+    flex: 2;
 }
 
 .header_list {
@@ -32,6 +33,7 @@ padding: 0;
 
 .header_city {
     flex: 4;
+    padding: 0px !important;
 }
 
 .header_login {
