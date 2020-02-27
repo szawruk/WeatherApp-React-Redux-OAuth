@@ -24,9 +24,15 @@ module.exports = (app) => {
     })
 
     //addCity route
-    app.post('/api/cities', async (req, res) => {
-        try {
+    app.post('/api/cities/:choice', async (req, res) => {
+
+        if (req.params.choice == 'add') {
             req.user.cityList.push(req.body.city);
+        }
+        else if (req.params.choice == 'delete') {
+            req.user.cityList = req.user.cityList.filter(city => city != req.body.city);
+        }
+        try {
             const user = await req.user.save();
             res.send(user);
         } catch (err) {

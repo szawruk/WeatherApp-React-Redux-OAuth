@@ -10,16 +10,39 @@ const ActualCity = (props) => {
             <div>
                 {props.actualCity}
             </div>
-            <button style={{ outline: 'none', fontSize: '2rem' }} onClick={e => props.addCity()}>
-                +
-            </button>
+            {renderAdd(props)}
+            {renderDelete(props)}
         </div>
     )
 }
 
+function renderAdd(props) {
+    if (props.auth != null && (props.auth != false)) {
+        if (!props.auth.cityList.includes(props.actualCity))
+            return (
+                <button style={{ outline: 'none', fontSize: '2rem' }} onClick={e => props.addCity()}>
+                    +
+                </button>
+            )
+        else return
+    }
+}
+
+function renderDelete(props) {
+    if (props.auth != null && (props.auth != false)) {
+        if (props.auth.cityList.includes(props.actualCity))
+            return (
+                <button style={{ outline: 'none', fontSize: '2rem' }} onClick={e => props.deleteCity()}>
+                    -
+                </button>
+            )
+        else return
+    }
+}
 
 function mapStateToProps(state) {
     return {
+        auth: state.auth,
         actualCity: state.actualCity
     }
 }
