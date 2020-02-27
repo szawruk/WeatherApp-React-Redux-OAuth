@@ -1,15 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 import '../styles/actualCity.scss';
 
 const ActualCity = (props) => {
     return (
         <div className='actualCity'>
-            {props.actualCity ? props.actualCity : ''}
+            <div>
+                {props.actualCity}
+            </div>
+            <button style={{ outline: 'none', fontSize: '2rem' }} onClick={e => props.addCity()}>
+                +
+            </button>
         </div>
     )
 }
+
 
 function mapStateToProps(state) {
     return {
@@ -17,4 +24,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(ActualCity);
+export default connect(mapStateToProps, actions)(ActualCity);

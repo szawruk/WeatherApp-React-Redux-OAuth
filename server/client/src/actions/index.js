@@ -15,3 +15,11 @@ export const setCity = (newCity) => {
         payload: newCity
     }
 }
+
+export const addCity = () => async (dispatch, getState) => {
+    const city = getState().actualCity;
+    const res = await axios.post('/api/cities', city);
+    console.log(city);
+
+    dispatch({ type: FETCH_USER, payload: res.data });
+};
