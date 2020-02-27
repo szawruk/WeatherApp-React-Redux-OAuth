@@ -20,7 +20,10 @@ class CitiesList extends React.Component {
         return (
             <div className='dropdown'>
                 <button>Your cities list</button>
-                {this.renderList()}
+                <div className='dropdown_content'>
+                    {this.renderList()}
+                </div>
+
             </div>
         )
     }
