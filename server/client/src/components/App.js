@@ -1,6 +1,7 @@
 import React from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
+import '../styles/app.scss';
 
 import Header from './Header';
 import Dashboard from './Dashboard';
@@ -14,7 +15,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='App_container'>
                 <Header />
                 <Dashboard />
             </div>

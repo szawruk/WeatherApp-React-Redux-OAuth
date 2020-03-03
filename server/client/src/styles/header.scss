@@ -5,7 +5,7 @@ box-sizing: border-box;
 }
 
 .header {
-    width: calc(100% - 20px);
+    width: 100%;
     height: 80px;
     display: flex;
     padding: 0px 10px;
@@ -15,7 +15,7 @@ box-sizing: border-box;
     border: 1px solid gray;
     border-radius: 5px;
     box-sizing: border-box;
-    margin: 10px;
+    margin: 10px 0px;
 }
 
 .header_app{
