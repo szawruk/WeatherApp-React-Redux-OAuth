@@ -7,9 +7,20 @@ import '../styles/dayOfTheWeek.scss';
 class DayOfTheWeek extends React.Component {
     render() {
         return (
-            <div className='dayOfTheWeek'>
-                siema dzien tygodnia
-             </div>
+            <div className='DayOfTheWeek'>
+                <div className='DayOfTheWeek_day'>
+                    {this.props.day}
+                </div>
+                <div className='DayOfTheWeek_temperature'>
+
+                </div>
+                <div className='DayOfTheWeek_icone'>
+
+                </div>
+                <div className='DayOfTheWeek_description'>
+
+                </div>
+            </div>
         )
     }
 }

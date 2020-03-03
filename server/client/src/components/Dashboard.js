@@ -9,7 +9,7 @@ const Dashboard = () => {
         <div>
             <ActualCity />
             <div className='Dashboard_5days'>
-                <DayOfTheWeek />
+                <DayOfTheWeek day='test' />
                 <DayOfTheWeek />
                 <DayOfTheWeek />
                 <DayOfTheWeek />
