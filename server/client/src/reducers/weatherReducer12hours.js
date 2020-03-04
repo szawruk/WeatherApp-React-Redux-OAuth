@@ -1,9 +1,9 @@
-import { FETCH_WEATHER } from '../actions/types';
+import { FETCH_WEATHER_12HOURS } from '../actions/types';
 
 export default (state = null, action) => {
     switch (action.type) {
 
-        case FETCH_WEATHER: {
+        case FETCH_WEATHER_12HOURS: {
             return action.payload || false
         }
 
