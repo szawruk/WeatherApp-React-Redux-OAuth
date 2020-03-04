@@ -14,7 +14,7 @@ class ActualWeather extends React.Component {
     }
 
     render() {
-        console.log(this.props.weather12hours);
+        console.log(this.props.weatherCurrent);
         return (
             <div className='ActualWeather'>
                 {this.renderActualInfo()}
@@ -31,7 +31,8 @@ function mapStateToProps(state) {
     return {
         actualCity: state.actualCity,
         weather5days: state.weather5days,
-        weather12hours: state.weather12hours
+        weather12hours: state.weather12hours,
+        weatherCurrent: state.weatherCurrent
     }
 }
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, SET_CITY, FETCH_WEATHER_5DAY, FETCH_WEATHER_12HOURS } from './types';
+import { FETCH_USER, SET_CITY, FETCH_WEATHER_5DAY, FETCH_WEATHER_12HOURS, FETCH_WEATHER_CURRENT } from './types';
 
 export const fetchUser = () => async dispatch => {
     const response = await axios.get('/api/current_user');
@@ -32,16 +32,21 @@ export const deleteCity = () => async (dispatch, getState) => {
     dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-export const fetchWeather_5day = () => async (dispatch, getState) => {
+export const fetchWeather_5days = () => async (dispatch, getState) => {
     const city = getState().actualCity;
-    const locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=vMY1c8uZgM9hNrXSp2JBp8s65XBjcX32&q=${city}`)
-    const response = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey.data[0].Key}?apikey=vMY1c8uZgM9hNrXSp2JBp8s65XBjcX32&details=true`);
-    dispatch({ type: FETCH_WEATHER_5DAY, payload: response.data });
+    const res = await axios.post('/api/weather_5days', { city });
+    dispatch({ type: FETCH_WEATHER_5DAY, payload: res.data });
 };
 
 export const fetchWeather_12hours = () => async (dispatch, getState) => {
     const city = getState().actualCity;
-    const locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=vMY1c8uZgM9hNrXSp2JBp8s65XBjcX32&q=${city}`)
-    const response = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey.data[0].Key}?apikey=vMY1c8uZgM9hNrXSp2JBp8s65XBjcX32&details=true`);
-    dispatch({ type: FETCH_WEATHER_12HOURS, payload: response.data });
+    const res = await axios.post('/api/weather_12hours', { city });
+    dispatch({ type: FETCH_WEATHER_12HOURS, payload: res.data });
 };
+
+export const fetchWeather_current = () => async (dispatch, getState) => {
+    const city = getState().actualCity;
+    const res = await axios.post('/api/weather_current', { city });
+    dispatch({ type: FETCH_WEATHER_CURRENT, payload: res.data });
+};
+

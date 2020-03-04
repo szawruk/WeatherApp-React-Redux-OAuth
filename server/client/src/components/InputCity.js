@@ -7,6 +7,8 @@ class InputCity extends React.Component {
     keyPressed(event) {
         if (event.key === 'Enter') {
             this.props.setCity(event.target.value);
+            //this.props.fetchWeather_12hours();
+            //this.props.fetchWeather_5days();
         }
     }
     render() {
