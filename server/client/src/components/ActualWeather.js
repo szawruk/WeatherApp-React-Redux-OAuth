@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import '../styles/actualWeather.scss';
 
@@ -17,4 +18,11 @@ class ActualWeather extends React.Component {
     }
 }
 
-export default ActualWeather;
+
+function mapStateToProps(state) {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps)(ActualWeather);
