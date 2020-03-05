@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { getIcon } from './ActualWeather'
+import { getIcon } from './ActualWeather';
+import { setDay } from '../actions/index';
 
 import '../styles/dayOfTheWeek.scss';
 
@@ -8,7 +9,7 @@ import '../styles/dayOfTheWeek.scss';
 class DayOfTheWeek extends React.Component {
     render() {
         return (
-            <div className='DayOfTheWeek'>
+            <div className='DayOfTheWeek' onClick={e => setDay(this.props.day)} >
                 <div className='DayOfTheWeek_day'>
                     {this.renderDay()}
                 </div>
@@ -82,7 +83,7 @@ function mapStateToProps(state) {
     return {
         weather5days: state.weather5days,
         weather12hours: state.weather12hours,
-        weatherCurrent: state.weatherCurrent
+        weatherCurrent: state.weatherCurrent,
     }
 }
 

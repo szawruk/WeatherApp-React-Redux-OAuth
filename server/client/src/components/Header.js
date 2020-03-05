@@ -52,9 +52,7 @@ class Header extends React.Component {
         }
     }
 
-    renderListContentHelper() {
 
-    }
 
 
     render() {

@@ -2,6 +2,7 @@ import React from 'react';
 import ActualCity from './ActualCity';
 import DayOfTheWeek from './DayOfTheWeek';
 import ActualWeather from './ActualWeather';
+import Days5Info from './Days5Info';
 
 import '../styles/dashboard.scss';
 
@@ -17,6 +18,8 @@ const Dashboard = () => {
                 <DayOfTheWeek day='4' />
                 <DayOfTheWeek day='5' />
             </div>
+            <Days5Info />
+
         </div>
     );
 };

@@ -10,13 +10,15 @@ class App extends React.Component {
 
     componentDidMount() {
         this.props.fetchUser();
-        this.props.setCity();
-        this.props.fetchWeather_5days();
-        // this.props.fetchWeather_12hours();
-        this.props.fetchWeather_current();
+        this.props.setDay(1);
+        //this.props.fetchWeather_5days();
+        //this.props.fetchWeather_12hours();
+        //this.props.fetchWeather_current();
+
     }
 
     render() {
+        this.setCityFirst();
         return (
             <div className='App_container'>
                 <Header />
@@ -25,7 +27,34 @@ class App extends React.Component {
         )
     }
 
+    setCityFirst() {
+        switch (this.props.auth) {
+            case null: {
+                this.props.setCity('Warszawa');
+                return;
+            }
+
+            case false: {
+                this.props.setCity('Warszawa');
+                return;
+            }
+
+            default: {
+                if (this.props.auth.cityList.length > 0) {
+                    this.props.setCity(this.props.auth.cityList[0]);
+                } else this.props.setCity('Warszawa');
+                return;
+            }
+        }
+    }
+
 
 }
 
-export default connect(null, actions)(App);
+function mapStateToProps(state) {
+    return {
+        auth: state.auth
+    }
+}
+
+export default connect(mapStateToProps, actions)(App);

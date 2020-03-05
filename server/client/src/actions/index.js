@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, SET_CITY, FETCH_WEATHER_5DAY, FETCH_WEATHER_12HOURS, FETCH_WEATHER_CURRENT } from './types';
+import { FETCH_USER, SET_CITY, FETCH_WEATHER_5DAY, FETCH_WEATHER_12HOURS, FETCH_WEATHER_CURRENT, SET_DAY } from './types';
 
 export const fetchUser = () => async dispatch => {
     const response = await axios.get('/api/current_user');
@@ -49,4 +49,11 @@ export const fetchWeather_current = () => async (dispatch, getState) => {
     const res = await axios.post('/api/weather_current', { city });
     dispatch({ type: FETCH_WEATHER_CURRENT, payload: res.data });
 };
+
+export const setDay = (number) => {
+    return {
+        type: SET_DAY,
+        payload: number
+    }
+}
 
