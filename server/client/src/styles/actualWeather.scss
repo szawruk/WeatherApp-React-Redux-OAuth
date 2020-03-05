@@ -35,6 +35,10 @@ padding: 10px;
 .ActualWeather_info_tempAndIcon span{
     height: 100%;
     flex: 4;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ActualWeather_info_tempAndIcon i{
@@ -42,6 +46,9 @@ padding: 10px;
     flex: 6;
     font-size: 3rem;
     color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ActualWeather_chart {
@@ -84,4 +91,10 @@ padding: 10px;
     justify-content: center;
     align-items: center;
     height: 100%; 
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.ActualWeather_info_adds_choice div :hover{
+    color: greenyellow;
 }

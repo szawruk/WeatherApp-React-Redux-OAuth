@@ -23,7 +23,7 @@ class CitiesList extends React.Component {
     render() {
         return (
             <div className='dropdown'>
-                <button>Your cities list</button>
+                <button>▼ Your cities list ▼</button>
                 <div className='dropdown_content'>
                     {this.renderList()}
                 </div>

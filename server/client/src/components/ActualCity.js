@@ -10,6 +10,7 @@ const ActualCity = (props) => {
             <div>
                 {props.actualCity}
             </div>
+            <div style={{ width: '15px' }}></div>
             {renderAdd(props)}
             {renderDelete(props)}
         </div>

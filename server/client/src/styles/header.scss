@@ -16,6 +16,7 @@ box-sizing: border-box;
     border-radius: 5px;
     box-sizing: border-box;
     margin: 10px 0px;
+    font-weight: bold;
 }
 
 .header_app{
@@ -41,7 +42,9 @@ box-sizing: border-box;
 }
 
 .header .box {
-    border: 3px solid red;
+    // border: 3px solid rgb(243, 158, 0);
+    border: 4px solid rgb(1, 157, 219);
+    border-radius: 10px;
     padding: 5px;
     margin: 0px 10px;
     height: 70%;

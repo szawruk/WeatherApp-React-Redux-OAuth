@@ -2,7 +2,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px dotted green;
+    border: 5px solid rgb(132, 1, 219);
+    border-radius: 10px;
     margin: 20px 0px;
-    height: 50px;
+    height: 70px;
+    font-weight: bold;
+    font-size: 21px;
+    
+}
+
+.actualCity button{
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 27px !important;
+    padding: 0px !important;
+    font-weight: bold;
+    outline: none;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.actualCity button:hover{
+background-color: goldenrod;
+border: 1px solid goldenrod;
+color: white;
 }

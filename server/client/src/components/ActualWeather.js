@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CurrentChart from './CurrentChart';
+import CurrentChartRain from './CurrentChartRain';
+import CurrentChartTemp from './currentChartTemp';
 
 
 import '../styles/actualWeather.scss';
@@ -41,11 +42,11 @@ class ActualWeather extends React.Component {
                 <p>Cloud cover {obj.CloudCover}%</p>
                 <p>Pressure {obj.Pressure.Metric.Value}hPa</p>
                 <div className='ActualWeather_info_adds_choice'>
-                    <div>
-                        rain
-                    </div>
-                    <div>
+                    <div onClick={e => this.setState({ isTemp: true })}>
                         temp
+                    </div>
+                    <div onClick={e => this.setState({ isTemp: false })}>
+                        rain
                     </div>
                 </div>
             </div>
@@ -55,12 +56,17 @@ class ActualWeather extends React.Component {
 
     renderChart() {
         if (this.props.weather12hours !== null && this.props.weather12hours !== false) {
-            return <CurrentChart obj={this.props.weather12hours} />
+            if (this.state.isTemp) {
+                return <CurrentChartTemp obj={this.props.weather12hours} />
+            } else {
+                return <CurrentChartRain obj={this.props.weather12hours} />
+            }
         } else return <div></div>
     }
 
     render() {
         console.log(this.props.weather12hours);
+        console.log(this.props.weatherCurrent);
         return (
             <div className='ActualWeather'>
                 {this.renderActualInfo()}
@@ -81,7 +87,7 @@ export const getIcon = (number) => {
     if (number === 3 || number === 21) {
         return <i className="typcn typcn-weather-partly-sunny"></i>;
     }
-    if (number === 6 || number === 7 || number === 8 || number === 11 || number === 38 || number === 44 || number === 35) {
+    if (number === 6 || number === 7 || number === 8 || number === 11 || number === 38 || number === 35) {
         return <i className="typcn typcn-weather-cloudy"></i>;
     }
     if (number === 12 || number === 13 || number === 14 || number === 18 || number === 29 || number === 39 || number === 40 || number === 25) {
@@ -96,6 +102,10 @@ export const getIcon = (number) => {
     if (number === 32) {
         return <i className="typcn typcn-weather-windy"></i>;
     }
+    if (number === 33 || number === 34 || number === 36 || number === 37 || number === 26) {
+        return <i className="typcn typcn-weather-night"></i>;
+    }
+
 }
 
 function mapStateToProps(state) {
