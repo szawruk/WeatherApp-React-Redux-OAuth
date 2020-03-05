@@ -59,7 +59,7 @@ export const getIcon = (number) => {
     if (number === 3 || number === 21) {
         return <i className="typcn typcn-weather-partly-sunny"></i>;
     }
-    if (number === 6 || number === 7 || number === 8 || number === 11 || number === 38 || number === 44) {
+    if (number === 6 || number === 7 || number === 8 || number === 11 || number === 38 || number === 44 || number === 35) {
         return <i className="typcn typcn-weather-cloudy"></i>;
     }
     if (number === 12 || number === 13 || number === 14 || number === 18 || number === 29 || number === 39 || number === 40 || number === 25) {

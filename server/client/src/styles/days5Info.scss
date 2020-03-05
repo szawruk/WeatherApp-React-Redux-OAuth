@@ -23,19 +23,47 @@
 
 .days5Info_data_container_left{
     height: 100%;
-    width: 50%;
+    flex: 1;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     flex-direction: column;
 }
 
 .days5Info_data_container_right{
     height: 100%;
-    width: 50%;
+    flex: 1;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     flex-direction: column;
 }
 
-.days5Info_sunmoon{
-    flex:1;
-    width: 100%;
+.days5Info_data_container p{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.days5Info_data_container span{
+    flex: 4;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.days5Info_data_container i{
+    flex: 4;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.days5Info_sunmoon{
+    width: 360px;
+    height: 360px;
+}
+
