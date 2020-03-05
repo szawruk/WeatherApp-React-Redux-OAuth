@@ -14,9 +14,8 @@ class DayOfTheWeek extends React.Component {
                 </div>
                 {this.renderTemperature()}
                 {this.renderIcon()}
-                <div className='DayOfTheWeek_description'>
+                {this.renderDescription()}
 
-                </div>
             </div>
         )
     }
@@ -25,9 +24,17 @@ class DayOfTheWeek extends React.Component {
         let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
         let date = new Date();
         let dayNumber = date.getDay();
-        if (this.props.day === '1') return 'Today'
+        if (this.props.day === '1') return (
+            <div className='DayOfTheWeek_day'>
+                {'Today'}
+            </div>
+        )
         else {
-            return weekdays[+dayNumber + +this.props.day - 1];
+            return (
+                <div className='DayOfTheWeek_day'>
+                    {weekdays[+dayNumber + +this.props.day - 1]}
+                </div>
+            )
         }
     }
 
@@ -57,6 +64,17 @@ class DayOfTheWeek extends React.Component {
 
             )
         } else return <div className='DayOfTheWeek_icone'> </div>
+    }
+
+    renderDescription() {
+        const obj = this.props.weather5days;
+        if (obj) {
+            return (
+                <div className='DayOfTheWeek_description'>
+                    {obj.DailyForecasts[this.props.day - 1].Day.ShortPhrase}
+                </div>
+            )
+        } else return <div className='DayOfTheWeek_description'></div>
     }
 }
 

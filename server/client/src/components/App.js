@@ -11,9 +11,9 @@ class App extends React.Component {
     componentDidMount() {
         this.props.fetchUser();
         this.props.setCity();
-        //this.props.fetchWeather_5days();
+        this.props.fetchWeather_5days();
         // this.props.fetchWeather_12hours();
-        //this.props.fetchWeather_current();
+        this.props.fetchWeather_current();
     }
 
     render() {
