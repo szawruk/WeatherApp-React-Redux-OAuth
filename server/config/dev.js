@@ -3,5 +3,5 @@ module.exports = {
     googleClientSecret: '0arwi_N9V_r5w0zE6trD-G31',
     mongoURI: 'mongodb+srv://p00gz:fcJlo8JljDMfyEIK@cluster0-iujwm.mongodb.net/test?retryWrites=true&w=majority',
     cookieKey: 'kjshkjh53ghjdfsad',
-    weatherKey: 's1TvIAHflHZeAHWnHBb42CVgB6kPmrwn'
+    weatherKey: 'LUW7uVysgyrS6Sh7um5bKO0CM1vj8ADr'
 }

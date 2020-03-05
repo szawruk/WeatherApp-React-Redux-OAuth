@@ -17,7 +17,7 @@ const ActualCity = (props) => {
 }
 
 function renderAdd(props) {
-    if (props.auth != null && (props.auth != false)) {
+    if (props.auth !== null && (props.auth !== false)) {
         if (!props.auth.cityList.includes(props.actualCity))
             return (
                 <button style={{ outline: 'none', fontSize: '2rem' }} onClick={e => props.addCity()}>
@@ -29,7 +29,7 @@ function renderAdd(props) {
 }
 
 function renderDelete(props) {
-    if (props.auth != null && (props.auth != false)) {
+    if (props.auth !== null && (props.auth !== false)) {
         if (props.auth.cityList.includes(props.actualCity))
             return (
                 <button style={{ outline: 'none', fontSize: '2rem' }} onClick={e => props.deleteCity()}>

@@ -1,6 +1,7 @@
 const passport = require('passport');
 const axios = require('axios');
 const keys = require('./config/keys');
+const fs = require('fs');
 
 module.exports = (app) => {
     app.get('/info', (req, res) => {
@@ -58,7 +59,7 @@ module.exports = (app) => {
 
     app.post('/api/weather_current', async (req, res) => {
         const locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys.weatherKey}&q=${req.body.city}`)
-        const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey.data[0].Key}?apikey=${keys.weatherKey}`);
+        const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey.data[0].Key}?apikey=${keys.weatherKey}&details=true`);
         res.send(response.data);
     })
 }

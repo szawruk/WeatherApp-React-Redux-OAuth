@@ -10,12 +10,12 @@ const Dashboard = () => {
         <div>
             <ActualCity />
             <ActualWeather />
-            <div className='Dashboard_5days'>
-                <DayOfTheWeek day='test' />
-                <DayOfTheWeek />
-                <DayOfTheWeek />
-                <DayOfTheWeek />
-                <DayOfTheWeek />
+            <div className='Dashboard_5daysWeather'>
+                <DayOfTheWeek day='1' />
+                <DayOfTheWeek day='2' />
+                <DayOfTheWeek day='3' />
+                <DayOfTheWeek day='4' />
+                <DayOfTheWeek day='5' />
             </div>
         </div>
     );
