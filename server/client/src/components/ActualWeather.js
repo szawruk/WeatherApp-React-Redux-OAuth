@@ -1,11 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import CurrentChart from './CurrentChart';
 
 
 import '../styles/actualWeather.scss';
 
 class ActualWeather extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            isTemp: true
+        };
+    }
     renderActualInfo() {
         const obj = this.props.weatherCurrent;
         return (
@@ -25,7 +32,6 @@ class ActualWeather extends React.Component {
     }
 
 
-
     getAdds(obj) {
         return (
             <div className='ActualWeather_info_adds'>
@@ -34,23 +40,39 @@ class ActualWeather extends React.Component {
                 <p>Wind speed {obj.Wind.Speed.Metric.Value} km/h</p>
                 <p>Cloud cover {obj.CloudCover}%</p>
                 <p>Pressure {obj.Pressure.Metric.Value}hPa</p>
+                <div className='ActualWeather_info_adds_choice'>
+                    <div>
+                        rain
+                    </div>
+                    <div>
+                        temp
+                    </div>
+                </div>
             </div>
 
         )
     }
 
+    renderChart() {
+        if (this.props.weather12hours !== null && this.props.weather12hours !== false) {
+            return <CurrentChart obj={this.props.weather12hours} />
+        } else return <div></div>
+    }
+
     render() {
-        console.log(this.props.weather5days);
+        console.log(this.props.weather12hours);
         return (
             <div className='ActualWeather'>
                 {this.renderActualInfo()}
                 <div className='ActualWeather_chart'>
-                    chart
+                    {this.renderChart()}
                 </div>
             </div>
         )
     }
 }
+
+
 
 export const getIcon = (number) => {
     if (number === 1 || number === 2 || number === 4 || number === 5) {

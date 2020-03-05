@@ -55,15 +55,15 @@
 }
 .days5Info_data_container i{
     flex: 4;
-    font-size: 3rem;
+    font-size: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-.days5Info_sunmoon{
-    width: 360px;
+.days5Info_chart{
+    flex: 1;
     height: 360px;
 }
 

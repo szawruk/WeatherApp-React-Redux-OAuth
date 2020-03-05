@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getIcon } from './ActualWeather';
+import RainChart5days from './RainChart5days';
+import { FtoC, roundNumber } from './usefulFuncions';
 
 import '../styles/days5Info.scss';
 import '../styles/switchDays5Info.scss';
@@ -25,8 +27,8 @@ class Days5Info extends React.Component {
                         </div>
                         {this.renderContainerData(obj)}
                     </div>
-                    <div className='days5Info_sunmoon'>
-                        mamy zachody
+                    <div className='days5Info_chart'>
+                        <RainChart5days isDay={this.state.isDay} obj={obj} />
                     </div>
                 </div>
             )
@@ -72,33 +74,26 @@ class Days5Info extends React.Component {
         return (
             <div className='days5Info_data_container'>
                 <div className='days5Info_data_container_left'>
-                    <span>{this.FtoC(day.Temperature[minmax].Value)} </span>
-                    <p>RealFeel {this.FtoC(day.RealFeelTemperature[minmax].Value)}*C</p>
+                    <span>{FtoC(day.Temperature[minmax].Value)} </span>
+                    <p>RealFeel {FtoC(day.RealFeelTemperature[minmax].Value)}*C</p>
                     <p>Precipitation {day[dayTime].PrecipitationProbability}%</p>
-                    <p>Thunderstorm {day[dayTime].ThunderstormProbability}%</p>
-                    <p>Wind {this.roundNumber(day[dayTime].Wind.Speed.Value * 1.61)}km/h</p>
+                    <p>Wind {roundNumber(day[dayTime].Wind.Speed.Value * 1.61)}km/h</p>
                     <p>Wind direction{day[dayTime].Wind.Direction.English}</p>
-                    <p>Wind ghost {this.roundNumber(day[dayTime].WindGust.Speed.Value * 1.61)}km/h</p>
+                    <p>Wind ghost {roundNumber(day[dayTime].WindGust.Speed.Value * 1.61)}km/h</p>
                 </div>
                 <div className='days5Info_data_container_right'>
                     {getIcon(day[dayTime].Icon)}
                     <p>Rain: {day[dayTime].Rain.Value}mm</p>
-                    <p>Hours of rain: {day[dayTime].HoursOfRain}</p>
                     <p>Snow: {day[dayTime].Snow.Value}mm</p>
-                    <p>Hours of snow: {day[dayTime].HoursOfSnow}</p>
                     <p>Cloud cover {day[dayTime].CloudCover}%</p>
+                    <p>Sun rise: {day.Sun.Rise.substring(11, 16)}</p>
+                    <p>Sun set: {day.Sun.Set.substring(11, 16)}</p>
+
                 </div>
             </div>
         )
     }
 
-    FtoC(temp) {
-        return this.roundNumber((parseInt(temp - 32) * 0.55));
-    }
-
-    roundNumber(number) {
-        return Math.round(number);
-    }
 }
 
 function mapStateToProps(state) {
