@@ -2,31 +2,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid rgb(132, 1, 219);
+    border: 5px solid rgb(1, 157, 219);
     border-radius: 10px;
     margin: 20px 0px;
     height: 70px;
     font-weight: bold;
     font-size: 21px;
-    
+    background-color: white;
 }
 
 .actualCity button{
     height: 45px;
-    width: 45px;
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
-    background-color: white;
+    color: rgb(255, 81, 0);
+    background-color: rgb(253, 248, 212);
     border-radius: 20px;
-    font-size: 27px !important;
+    font-size: 21px !important;
     padding: 0px !important;
     font-weight: bold;
     outline: none;
-    border: 1px solid black;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    border: none;
 }
 
 .actualCity button:hover{

@@ -22,7 +22,7 @@ function renderAdd(props) {
         if (!props.auth.cityList.includes(props.actualCity))
             return (
                 <button style={{ outline: 'none', fontSize: '2rem' }} onClick={e => props.addCity()}>
-                    +
+                    add +
                 </button>
             )
         else return
@@ -34,7 +34,7 @@ function renderDelete(props) {
         if (props.auth.cityList.includes(props.actualCity))
             return (
                 <button style={{ outline: 'none', fontSize: '2rem' }} onClick={e => props.deleteCity()}>
-                    -
+                    delete -
                 </button>
             )
         else return

@@ -23,7 +23,10 @@ class ActualWeather extends React.Component {
                 </div>
                 <div className='ActualWeather_info_tempAndIcon'>
                     <span>
-                        {obj ? obj[0].Temperature.Metric.Value : ''}
+                        <div>
+                            {obj ? obj[0].Temperature.Metric.Value : ''}
+                            <sup>o</sup>C
+                    </div>
                     </span>
                     {obj ? getIcon(obj[0].WeatherIcon) : <i></i>}
                 </div>
@@ -36,16 +39,16 @@ class ActualWeather extends React.Component {
     getAdds(obj) {
         return (
             <div className='ActualWeather_info_adds'>
-                <p>RealFeel {obj.RealFeelTemperature.Metric.Value} *C</p>
+                <p>RealFeel {obj.RealFeelTemperature.Metric.Value} <sup>O</sup>C</p>
                 <p>Wind direction {obj.Wind.Direction.English}</p>
                 <p>Wind speed {obj.Wind.Speed.Metric.Value} km/h</p>
                 <p>Cloud cover {obj.CloudCover}%</p>
                 <p>Pressure {obj.Pressure.Metric.Value}hPa</p>
                 <div className='ActualWeather_info_adds_choice'>
-                    <div onClick={e => this.setState({ isTemp: true })}>
+                    <div onClick={e => this.setState({ isTemp: true })} style={{ color: this.state.isTemp ? 'orange' : 'black' }}>
                         temp
                     </div>
-                    <div onClick={e => this.setState({ isTemp: false })}>
+                    <div onClick={e => this.setState({ isTemp: false })} style={{ color: this.state.isTemp ? 'black' : 'orange' }}>
                         rain
                     </div>
                 </div>

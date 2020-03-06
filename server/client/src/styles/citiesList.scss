@@ -35,3 +35,10 @@
 .dropdown:hover .dropdown_content {
   display: block;
 }
+
+
+@media (max-width:800px){
+    .dropdown button{
+        font-size: 15px;
+    }
+}

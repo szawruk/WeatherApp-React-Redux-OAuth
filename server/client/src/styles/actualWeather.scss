@@ -1,7 +1,6 @@
 .ActualWeather {
 width: 100%;
 box-sizing: border-box;
-border: 3px solid blue;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;
@@ -11,44 +10,49 @@ padding: 10px;
 .ActualWeather_info {
     width: 370px;
     height: 380px;
-    border: 3px solid red;
+    border: 5px solid rgb(1, 157, 219);
+    background-color: white;
+    border-radius: 10px;
     margin: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
+    font-weight: bold;
 }
 
 .ActualWeather_info_description{
     width: 100%;
     flex: 1;
-    border: 1px solid orange;
     text-align: center;
 }
 
 .ActualWeather_info_tempAndIcon{
     width: 100%;
     flex: 3;
-    border: 1px solid orange;
     display: flex;
+    justify-content: center;
 }
 
 .ActualWeather_info_tempAndIcon span{
     height: 100%;
-    flex: 4;
-    font-size: 3rem;
+    width: 35%;
+    font-size: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    margin-right: 10px;
 }
 
 .ActualWeather_info_tempAndIcon i{
     height: 100%;
-    flex: 6;
-    font-size: 3rem;
+    width: 30%;
+    font-size: 4rem;
     color: purple;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 .ActualWeather_chart {
@@ -56,14 +60,15 @@ padding: 10px;
     flex: 1;
     max-width: 800px;
     min-width: 600px;
-    border: 3px solid red;
+    border: 5px solid rgb(1, 157, 219);
+    border-radius: 10px;
+    background-color: white;
     margin: 10px;
 }
 
 .ActualWeather_info_adds{
     width: 100%;
     flex: 8;
-    border: 1px solid orange;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,18 +88,25 @@ padding: 10px;
     flex: 1;
     width: 100%;
     display: flex;
+    justify-content: space-around;
     
 }
 .ActualWeather_info_adds_choice div{
-    flex: 1;
+    width: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%; 
     cursor: pointer;
-    transition: 0.5s ease-in-out;
+    transition: 0.2s ease-in-out;
+    padding: 2px;
+    border: 3px solid ;
+    background-color: white;
+    border: 3px solid rgb(1, 157, 219);
+    border-radius: 10px;
 }
 
-.ActualWeather_info_adds_choice div :hover{
-    color: greenyellow;
+.ActualWeather_info_adds_choice div:hover{
+    color: goldenrod;
+    background-color: gray;
 }

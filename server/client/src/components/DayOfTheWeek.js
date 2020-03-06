@@ -48,7 +48,13 @@ class DayOfTheWeek extends React.Component {
             tempn = Math.round((parseInt(tempn - 32) * 0.55));
             return (
                 <div className='DayOfTheWeek_temperature'>
-                    <p>{tempd} </p> / <span>{tempn}</span>
+                    <span style={{ color: 'white' }}>
+                        {tempd} <sup style={{ fontSize: 'x-small', verticalAlign: 'super' }}>O</sup>C
+                    </span>
+                    <span style={{ color: 'goldenrod' }} > / </span>
+                    <span style={{ color: 'black' }}>
+                        {tempn}<sup style={{ fontSize: 'x-small', verticalAlign: 'super' }}>O</sup>C
+                    </span>
                 </div>
             )
         } else return <div className='DayOfTheWeek_temperature'></div>

@@ -1,24 +1,36 @@
 .DayOfTheWeek {
     width: 200px;
     height: 300px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    border: 5px solid rgb(1, 157, 219);
+    border-radius: 20px;
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
 }
 
 .DayOfTheWeek_day{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(1, 157, 219);
 }
 
 .DayOfTheWeek_temperature {
     width: 100%;
-    height: 80px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0,0,0,0.4);
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 5px;
 }
 
 .DayOfTheWeek_icone{
@@ -33,8 +45,11 @@
 
 .DayOfTheWeek_description {
     width: 100%;
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    font-size: 15px;
+    border-top: 2px solid rgb(1, 157, 219);
 }

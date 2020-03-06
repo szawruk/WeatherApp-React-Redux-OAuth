@@ -13,7 +13,7 @@ class Days5Info extends React.Component {
         this.state = {
             isDay: true,
             dayColor: 'goldenrod',
-            nightColor: 'white'
+            nightColor: 'black'
         };
     }
     render() {
@@ -53,7 +53,7 @@ class Days5Info extends React.Component {
         if (e.target.checked) {
             this.setState({
                 isDay: false,
-                dayColor: 'white',
+                dayColor: 'black',
                 nightColor: 'goldenrod'
             })
         }
@@ -61,7 +61,7 @@ class Days5Info extends React.Component {
             this.setState({
                 isDay: true,
                 dayColor: 'goldenrod',
-                nightColor: 'white'
+                nightColor: 'black'
             })
         }
     }
@@ -74,8 +74,8 @@ class Days5Info extends React.Component {
         return (
             <div className='days5Info_data_container'>
                 <div className='days5Info_data_container_left'>
-                    <span>{FtoC(day.Temperature[minmax].Value)} </span>
-                    <p>RealFeel {FtoC(day.RealFeelTemperature[minmax].Value)}*C</p>
+                    <span><div>{FtoC(day.Temperature[minmax].Value)}<sup>o</sup>C</div></span>
+                    <p><div>RealFeel {FtoC(day.RealFeelTemperature[minmax].Value)}<sup>o</sup>C</div></p>
                     <p>Precipitation {day[dayTime].PrecipitationProbability}%</p>
                     <p>Wind {roundNumber(day[dayTime].Wind.Speed.Value * 1.61)}km/h</p>
                     <p>Wind direction{day[dayTime].Wind.Direction.English}</p>
