@@ -46,20 +46,55 @@ module.exports = (app) => {
 
     //weather
     app.post('/api/weather_5days', async (req, res) => {
-        const locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys.weatherKey}&q=${req.body.city}`)
-        const response = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey.data[0].Key}?apikey=${keys.weatherKey}&details=true`);
+        let key = '';
+        let witness = false;
+        let locationKey = '';
+        for (let i = 1; i < 4; i++) {
+            key = 'weatherKey' + i;
+            locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys[key]}&q=${req.body.city}`)
+                .catch(error => {
+                    witness = true;
+                })
+            if (witness == false) break;
+            witness = false;
+        }
+        const response = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey.data[0].Key}?apikey=${keys[key]}&details=true`)
         res.send(response.data);
+
     })
 
     app.post('/api/weather_12hours', async (req, res) => {
-        const locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys.weatherKey}&q=${req.body.city}`)
-        const response = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey.data[0].Key}?apikey=${keys.weatherKey}&details=true`);
+        let key = '';
+        let witness = false;
+        let locationKey = '';
+        for (let i = 1; i < 4; i++) {
+            key = 'weatherKey' + i;
+            locationKey = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey.data[0].Key}?apikey=${keys[key]}&details=true`)
+                .catch(error => {
+                    witness = true;
+                })
+            if (witness == false) break;
+            witness = false;
+        }
+        const response = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey.data[0].Key}?apikey=${keys[key]}&details=true`);
         res.send(response.data);
     })
 
     app.post('/api/weather_current', async (req, res) => {
-        const locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys.weatherKey}&q=${req.body.city}`)
-        const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey.data[0].Key}?apikey=${keys.weatherKey}&details=true`);
+        let key = '';
+        let witness = false;
+        let locationKey = '';
+        for (let i = 1; i < 4; i++) {
+            key = 'weatherKey' + i;
+            locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys[key]}&q=${req.body.city}`)
+                .catch(error => {
+                    witness = true;
+                })
+            if (witness == false) break;
+            witness = false;
+        }
+        const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey.data[0].Key}?apikey=${keys[key]}&details=true`);
         res.send(response.data);
+
     })
 }

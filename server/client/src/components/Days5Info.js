@@ -28,6 +28,9 @@ class Days5Info extends React.Component {
                         {this.renderContainerData(obj)}
                     </div>
                     <div className='days5Info_chart'>
+                        <div className='days5Info_chart_description'>
+                            Rain probability chart for 5 coming days
+                        </div>
                         <RainChart5days isDay={this.state.isDay} obj={obj} />
                     </div>
                 </div>

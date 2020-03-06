@@ -29,7 +29,7 @@ class RainChart5days extends React.Component {
 
         var options = {
             low: 0,
-            height: '340px'
+            height: '310px'
         };
 
         var type = 'Bar'

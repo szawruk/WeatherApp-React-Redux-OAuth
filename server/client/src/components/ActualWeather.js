@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CurrentChartRain from './CurrentChartRain';
-import CurrentChartTemp from './currentChartTemp';
+import CurrentChartTemp from './CurrentChartTemp';
 
 
 import '../styles/actualWeather.scss';
@@ -74,6 +74,9 @@ class ActualWeather extends React.Component {
             <div className='ActualWeather'>
                 {this.renderActualInfo()}
                 <div className='ActualWeather_chart'>
+                    <div className='ActualWeather_chart_description'>
+                        {this.state.isTemp ? 'Temperature for next 12 hours' : 'Rain probability for next 12 hours'}
+                    </div>
                     {this.renderChart()}
                 </div>
             </div>

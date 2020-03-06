@@ -3,8 +3,9 @@ width: 100%;
 box-sizing: border-box;
 display: flex;
 flex-wrap: wrap;
-justify-content: space-evenly;
+justify-content: center;
 padding: 10px;
+margin-bottom: 10px;
 }
 
 .ActualWeather_info {
@@ -14,6 +15,7 @@ padding: 10px;
     background-color: white;
     border-radius: 10px;
     margin: 10px;
+    margin-right: 15px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -59,11 +61,19 @@ padding: 10px;
     height: 380px;
     flex: 1;
     max-width: 800px;
-    min-width: 600px;
+    min-width: 400px;
     border: 5px solid rgb(1, 157, 219);
     border-radius: 10px;
     background-color: white;
     margin: 10px;
+    padding: 10px;
+}
+
+.ActualWeather_chart_description{
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
 }
 
 .ActualWeather_info_adds{

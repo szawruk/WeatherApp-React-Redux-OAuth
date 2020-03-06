@@ -34,7 +34,7 @@ class CurrentChartTemp extends React.Component {
 
         var options = {
             low: 0,
-            height: '360px'
+            height: '310px'
         };
 
         let type = 'Line';

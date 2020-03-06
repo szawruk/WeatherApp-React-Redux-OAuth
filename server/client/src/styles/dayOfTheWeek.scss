@@ -1,5 +1,8 @@
 .DayOfTheWeek {
+    flex: 1;
     width: 200px;
+    max-width: 240px;
+    min-width: 150px;
     height: 300px;
     display: flex;
     flex-direction: column;;
