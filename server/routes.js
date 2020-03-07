@@ -49,14 +49,14 @@ module.exports = (app) => {
         let key = '';
         let witness = false;
         let locationKey = '';
-        for (let i = 1; i < 4; i++) {
+        for (let i = 1; i < 6; i++) {
             key = 'weatherKey' + i;
             locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys[key]}&q=${req.body.city}`)
                 .catch(error => {
                     witness = true;
                 })
             if (witness == false) break;
-            if (i === 3) {
+            if (i === 5) {
                 res.status(503).send('503');
             }
             witness = false;
@@ -70,14 +70,14 @@ module.exports = (app) => {
         let key = '';
         let witness = false;
         let locationKey = '';
-        for (let i = 1; i < 4; i++) {
+        for (let i = 1; i < 6; i++) {
             key = 'weatherKey' + i;
             locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys[key]}&q=${req.body.city}`)
                 .catch(error => {
                     witness = true;
                 })
             if (witness == false) break;
-            if (i === 3) {
+            if (i === 5) {
                 res.status(503).send('503');
             }
             witness = false;
@@ -90,14 +90,14 @@ module.exports = (app) => {
         let key = '';
         let witness = false;
         let locationKey = '';
-        for (let i = 1; i < 4; i++) {
+        for (let i = 1; i < 6; i++) {
             key = 'weatherKey' + i;
             locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys[key]}&q=${req.body.city}`)
                 .catch(error => {
                     witness = true;
                 })
             if (witness == false) break;
-            if (i === 3) {
+            if (i === 5) {
                 res.status(503).send('503');
             }
 
@@ -112,7 +112,7 @@ module.exports = (app) => {
         let key = '';
         let witness = false;
         let locationKey = '';
-        for (let i = 1; i < 4; i++) {
+        for (let i = 1; i < 6; i++) {
             key = 'weatherKey' + i;
 
             locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys[key]}&q=${req.body.city}&language=en`)
@@ -120,7 +120,7 @@ module.exports = (app) => {
                     witness = true;
                 })
             if (witness == false) break;
-            if (i === 3) {
+            if (i === 5) {
                 res.status(503).send('503');
             }
             witness = false;
