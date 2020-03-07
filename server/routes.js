@@ -56,6 +56,9 @@ module.exports = (app) => {
                     witness = true;
                 })
             if (witness == false) break;
+            if (i === 3) {
+                res.status(503).send('503');
+            }
             witness = false;
         }
         const response = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey.data[0].Key}?apikey=${keys[key]}&details=true`)
@@ -69,11 +72,14 @@ module.exports = (app) => {
         let locationKey = '';
         for (let i = 1; i < 4; i++) {
             key = 'weatherKey' + i;
-            locationKey = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey.data[0].Key}?apikey=${keys[key]}&details=true`)
+            locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys[key]}&q=${req.body.city}`)
                 .catch(error => {
                     witness = true;
                 })
             if (witness == false) break;
+            if (i === 3) {
+                res.status(503).send('503');
+            }
             witness = false;
         }
         const response = await axios.get(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${locationKey.data[0].Key}?apikey=${keys[key]}&details=true`);
@@ -91,10 +97,36 @@ module.exports = (app) => {
                     witness = true;
                 })
             if (witness == false) break;
+            if (i === 3) {
+                res.status(503).send('503');
+            }
+
             witness = false;
         }
         const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey.data[0].Key}?apikey=${keys[key]}&details=true`);
         res.send(response.data);
 
+    })
+
+    app.post('/api/city', async (req, res) => {
+        let key = '';
+        let witness = false;
+        let locationKey = '';
+        for (let i = 1; i < 4; i++) {
+            key = 'weatherKey' + i;
+
+            locationKey = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${keys[key]}&q=${req.body.city}&language=en`)
+                .catch(error => {
+                    witness = true;
+                })
+            if (witness == false) break;
+            if (i === 3) {
+                res.status(503).send('503');
+            }
+            witness = false;
+        }
+
+        if (locationKey.data[0]) res.status(200).send('found');
+        else res.status(404).send('not foundtt');
     })
 }

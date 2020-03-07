@@ -5,6 +5,7 @@ import weatherReducer12hours from './weatherReducer12hours';
 import weatherReducerCurrent from './weatherReducerCurrent';
 import setDayReducer from './setDayReducer';
 import { combineReducers } from 'redux';
+import cityNotFoundReducer from './cityNotFoundReducer';
 
 export default combineReducers({
     auth: authReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     weather5days: weatherReducer5day,
     weather12hours: weatherReducer12hours,
     weatherCurrent: weatherReducerCurrent,
-    actualDay: setDayReducer
+    actualDay: setDayReducer,
+    isCityFound: cityNotFoundReducer
 })

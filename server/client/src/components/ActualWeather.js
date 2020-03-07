@@ -26,7 +26,7 @@ class ActualWeather extends React.Component {
                         <div>
                             {obj ? obj[0].Temperature.Metric.Value : ''}
                             <sup>o</sup>C
-                    </div>
+                        </div>
                     </span>
                     {obj ? getIcon(obj[0].WeatherIcon) : <i></i>}
                 </div>

@@ -11,14 +11,12 @@ class App extends React.Component {
     componentDidMount() {
         this.props.fetchUser();
         this.props.setDay(1);
-        this.props.fetchWeather_5days();
-        //this.props.fetchWeather_12hours();
-        //this.props.fetchWeather_current();
+        this.setCityFirst();
 
     }
 
     render() {
-        this.setCityFirst();
+
         return (
             <div className='App_container'>
                 <Header />

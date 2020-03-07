@@ -78,11 +78,11 @@ class Days5Info extends React.Component {
             <div className='days5Info_data_container'>
                 <div className='days5Info_data_container_left'>
                     <span><div>{FtoC(day.Temperature[minmax].Value)}<sup>o</sup>C</div></span>
-                    <p><div>RealFeel {FtoC(day.RealFeelTemperature[minmax].Value)}<sup>o</sup>C</div></p>
-                    <p>Precipitation {day[dayTime].PrecipitationProbability}%</p>
-                    <p>Wind {roundNumber(day[dayTime].Wind.Speed.Value * 1.61)}km/h</p>
-                    <p>Wind direction{day[dayTime].Wind.Direction.English}</p>
-                    <p>Wind ghost {roundNumber(day[dayTime].WindGust.Speed.Value * 1.61)}km/h</p>
+                    <header><p>RealFeel {FtoC(day.RealFeelTemperature[minmax].Value)}<sup>o</sup>C</p></header>
+                    <header>Precipitation {day[dayTime].PrecipitationProbability}%</header>
+                    <header>Wind {roundNumber(day[dayTime].Wind.Speed.Value * 1.61)}km/h</header>
+                    <header>Wind direction{day[dayTime].Wind.Direction.English}</header>
+                    <header>Wind ghost {roundNumber(day[dayTime].WindGust.Speed.Value * 1.61)}km/h</header>
                 </div>
                 <div className='days5Info_data_container_right'>
                     {getIcon(day[dayTime].Icon)}

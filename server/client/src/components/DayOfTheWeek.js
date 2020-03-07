@@ -9,7 +9,7 @@ import '../styles/dayOfTheWeek.scss';
 class DayOfTheWeek extends React.Component {
     render() {
         return (
-            <div className='DayOfTheWeek' onClick={e => this.props.setDay(this.props.day)} >
+            <div className='DayOfTheWeek' onClick={e => this.props.setDay(this.props.day)} style={this.props.day == this.props.actualDay ? { color: 'goldenrod', border: "3px solid goldenrod" } : {}}>
                 <div className='DayOfTheWeek_day'>
                     {this.renderDay()}
                 </div>
@@ -88,8 +88,7 @@ class DayOfTheWeek extends React.Component {
 function mapStateToProps(state) {
     return {
         weather5days: state.weather5days,
-        weather12hours: state.weather12hours,
-        weatherCurrent: state.weatherCurrent
+        actualDay: state.actualDay
     }
 }
 

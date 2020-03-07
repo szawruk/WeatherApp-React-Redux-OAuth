@@ -6,16 +6,29 @@ import '../styles/inputCity.scss';
 class InputCity extends React.Component {
     keyPressed(event) {
         if (event.key === 'Enter') {
-            this.props.setCity(event.target.value);
-            //this.props.fetchWeather_12hours();
-            //this.props.fetchWeather_5days();
+            if (event.target.value.length > 1) {
+                let city = event.target.value[0].toUpperCase() + event.target.value.slice(1);
+                this.props.setCity(city);
+                //this.props.fetchWeather_12hours();
+                //this.props.fetchWeather_5days();
+                this.props.fetchWeather_current();
+
+            }
+
         }
     }
     render() {
+        console.log('odsweizam');
         return (
             <input type="text" placeholder="Enter a city..." onKeyPress={e => this.keyPressed(e)} className='inputCity_input' />
         )
     }
 }
 
-export default connect(null, actions)(InputCity);
+function mapStateToProps(state) {
+    return {
+        actualCity: state.actualCity
+    }
+}
+
+export default connect(mapStateToProps, actions)(InputCity);

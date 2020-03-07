@@ -3,12 +3,14 @@ import ActualCity from './ActualCity';
 import DayOfTheWeek from './DayOfTheWeek';
 import ActualWeather from './ActualWeather';
 import Days5Info from './Days5Info';
+import CityNotFound from './CityNotFound';
 
 import '../styles/dashboard.scss';
 
 const Dashboard = () => {
     return (
         <div>
+            <CityNotFound />
             <ActualCity />
             <ActualWeather />
             <div className='Dashboard_5daysWeather'>

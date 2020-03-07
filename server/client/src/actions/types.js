@@ -4,3 +4,5 @@ export const SET_DAY = 'set_day';
 export const FETCH_WEATHER_5DAY = 'fetch_weather_5days';
 export const FETCH_WEATHER_12HOURS = 'fetch_weather_12hours';
 export const FETCH_WEATHER_CURRENT = 'fetch_weather_current';
+export const CITY_FOUND = 'city_found';
+export const CITY_NOT_FOUND = 'city_not_found';

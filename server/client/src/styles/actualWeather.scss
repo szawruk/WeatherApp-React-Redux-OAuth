@@ -10,7 +10,7 @@ margin-bottom: 10px;
 
 .ActualWeather_info {
     width: 370px;
-    height: 380px;
+    height: 360px;
     border: 5px solid rgb(1, 157, 219);
     background-color: white;
     border-radius: 10px;
@@ -37,7 +37,7 @@ margin-bottom: 10px;
 
 .ActualWeather_info_tempAndIcon span{
     height: 100%;
-    width: 35%;
+    flex: 2;
     font-size: 4rem;
     display: flex;
     justify-content: center;
@@ -48,8 +48,8 @@ margin-bottom: 10px;
 
 .ActualWeather_info_tempAndIcon i{
     height: 100%;
-    width: 30%;
-    font-size: 4rem;
+    flex: 1;
+    font-size: 5rem;
     color: purple;
     display: flex;
     justify-content: center;
@@ -58,7 +58,7 @@ margin-bottom: 10px;
 }
 
 .ActualWeather_chart {
-    height: 380px;
+    height: 360px;
     flex: 1;
     max-width: 800px;
     min-width: 400px;
@@ -118,5 +118,5 @@ margin-bottom: 10px;
 
 .ActualWeather_info_adds_choice div:hover{
     color: goldenrod;
-    background-color: gray;
+    background-color: rgba(0, 0, 0, 0.3);
 }
