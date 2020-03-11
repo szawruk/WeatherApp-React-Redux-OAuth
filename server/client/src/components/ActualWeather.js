@@ -39,11 +39,11 @@ class ActualWeather extends React.Component {
     getAdds(obj) {
         return (
             <div className='ActualWeather_info_adds'>
-                <p>RealFeel {obj.RealFeelTemperature.Metric.Value} <sup>O</sup>C</p>
-                <p>Wind direction {obj.Wind.Direction.English}</p>
-                <p>Wind speed {obj.Wind.Speed.Metric.Value} km/h</p>
-                <p>Cloud cover {obj.CloudCover}%</p>
-                <p>Pressure {obj.Pressure.Metric.Value}hPa</p>
+                <p>RealFeel: {obj.RealFeelTemperature.Metric.Value} <sup>O</sup>C</p>
+                <p>Wind direction: {obj.Wind.Direction.English}</p>
+                <p>Wind speed: {obj.Wind.Speed.Metric.Value} km/h</p>
+                <p>Cloud cover: {obj.CloudCover}%</p>
+                <p style={{ marginBottom: '10px' }}>Pressure: {obj.Pressure.Metric.Value}hPa</p>
                 <div className='ActualWeather_info_adds_choice'>
                     <div onClick={e => this.setState({ isTemp: true })} style={{ color: this.state.isTemp ? 'orange' : 'black' }}>
                         temp
@@ -68,8 +68,6 @@ class ActualWeather extends React.Component {
     }
 
     render() {
-        console.log(this.props.weather12hours);
-        console.log(this.props.weatherCurrent);
         return (
             <div className='ActualWeather'>
                 {this.renderActualInfo()}

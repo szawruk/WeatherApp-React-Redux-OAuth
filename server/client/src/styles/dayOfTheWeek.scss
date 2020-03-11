@@ -9,12 +9,13 @@
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    border: 5px solid rgb(1, 157, 219);
     border-radius: 20px;
     margin: 5px;
     padding: 5px;
     background-color: white;
     transition: 0.3s ease-in-out;
+    box-shadow: 10px 10px 10px black;
+    border: 3px solid rgb(1, 157, 219);
 }
 
 .DayOfTheWeek:hover {

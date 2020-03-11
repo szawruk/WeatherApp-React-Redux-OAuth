@@ -11,7 +11,6 @@ margin-bottom: 10px;
 .ActualWeather_info {
     width: 370px;
     height: 360px;
-    border: 5px solid rgb(1, 157, 219);
     background-color: white;
     border-radius: 10px;
     margin: 10px;
@@ -20,6 +19,8 @@ margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     font-weight: bold;
+    box-shadow: 10px 10px 10px black;
+    border: 3px solid rgb(1, 157, 219);
 }
 
 .ActualWeather_info_description{
@@ -62,11 +63,12 @@ margin-bottom: 10px;
     flex: 1;
     max-width: 800px;
     min-width: 400px;
-    border: 5px solid rgb(1, 157, 219);
     border-radius: 10px;
     background-color: white;
     margin: 10px;
     padding: 10px;
+    box-shadow: 10px 10px 10px black;
+    border: 3px solid rgb(1, 157, 219);
 }
 
 .ActualWeather_chart_description{

@@ -78,17 +78,17 @@ class Days5Info extends React.Component {
             <div className='days5Info_data_container'>
                 <div className='days5Info_data_container_left'>
                     <span><div>{FtoC(day.Temperature[minmax].Value)}<sup>o</sup>C</div></span>
-                    <header><p>RealFeel {FtoC(day.RealFeelTemperature[minmax].Value)}<sup>o</sup>C</p></header>
-                    <header>Precipitation {day[dayTime].PrecipitationProbability}%</header>
-                    <header>Wind {roundNumber(day[dayTime].Wind.Speed.Value * 1.61)}km/h</header>
-                    <header>Wind direction{day[dayTime].Wind.Direction.English}</header>
-                    <header>Wind ghost {roundNumber(day[dayTime].WindGust.Speed.Value * 1.61)}km/h</header>
+                    <header><p>RealFeel: {FtoC(day.RealFeelTemperature[minmax].Value)}<sup>o</sup>C</p></header>
+                    <header>Precipitation: {day[dayTime].PrecipitationProbability}%</header>
+                    <header>Wind: {roundNumber(day[dayTime].Wind.Speed.Value * 1.61)}km/h</header>
+                    <header>Wind direction: {day[dayTime].Wind.Direction.English}</header>
+                    <header>Wind ghost: {roundNumber(day[dayTime].WindGust.Speed.Value * 1.61)}km/h</header>
                 </div>
                 <div className='days5Info_data_container_right'>
                     {getIcon(day[dayTime].Icon)}
                     <p>Rain: {day[dayTime].Rain.Value}mm</p>
                     <p>Snow: {day[dayTime].Snow.Value}mm</p>
-                    <p>Cloud cover {day[dayTime].CloudCover}%</p>
+                    <p>Cloud cover: {day[dayTime].CloudCover}%</p>
                     <p>Sun rise: {day.Sun.Rise.substring(11, 16)}</p>
                     <p>Sun set: {day.Sun.Set.substring(11, 16)}</p>
 

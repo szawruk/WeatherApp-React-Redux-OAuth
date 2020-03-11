@@ -2,13 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 5px solid rgb(1, 157, 219);
     border-radius: 10px;
     margin: 20px 0px;
     height: 70px;
     font-weight: bold;
     font-size: 21px;
     background-color: white;
+    box-shadow: 10px 10px 10px black;
+    border: 3px solid rgb(1, 157, 219);
 }
 
 .actualCity button{
