@@ -4,8 +4,6 @@ import CurrentChartRain from './CurrentChartRain';
 import CurrentChartTemp from './CurrentChartTemp';
 
 
-import '../styles/actualWeather.scss';
-
 class ActualWeather extends React.Component {
 
     constructor(props) {

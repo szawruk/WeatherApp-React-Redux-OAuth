@@ -15,7 +15,7 @@
     background-color: white;
     transition: 0.3s ease-in-out;
     box-shadow: 10px 10px 10px black;
-    border: 3px solid rgb(1, 157, 219);
+    border: 3px solid $main-blue;
 }
 
 .DayOfTheWeek:hover {
@@ -29,7 +29,7 @@
     height: 30px;
     width: 100%;
     font-weight: bold;
-    border-bottom: 2px solid rgb(1, 157, 219);
+    border-bottom: 2px solid $main-blue;
 }
 
 .DayOfTheWeek_temperature {
@@ -62,5 +62,5 @@
     align-items: center;
     text-align: center;
     font-size: 15px;
-    border-top: 2px solid rgb(1, 157, 219);
+    border-top: 2px solid $main-blue;
 }

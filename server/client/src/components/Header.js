@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import CitiesList from './CitiesList';
 import InputCity from './InputCity';
-import '../styles/header.scss'
 
 class Header extends React.Component {
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import '../styles/inputCity.scss';
 
 class InputCity extends React.Component {
     keyPressed(event) {
@@ -9,16 +8,11 @@ class InputCity extends React.Component {
             if (event.target.value.length > 1) {
                 let city = event.target.value[0].toUpperCase() + event.target.value.slice(1);
                 this.props.setCity(city);
-                //this.props.fetchWeather_12hours();
-                //this.props.fetchWeather_5days();
-                this.props.fetchWeather_current();
-
             }
 
         }
     }
     render() {
-        console.log('odsweizam');
         return (
             <input type="text" placeholder="Enter a city..." onKeyPress={e => this.keyPressed(e)} className='inputCity_input' />
         )

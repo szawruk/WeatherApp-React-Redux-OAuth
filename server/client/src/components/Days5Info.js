@@ -4,9 +4,6 @@ import { getIcon } from './ActualWeather';
 import RainChart5days from './RainChart5days';
 import { FtoC, roundNumber } from './usefulFuncions';
 
-import '../styles/days5Info.scss';
-import '../styles/switchDays5Info.scss';
-
 class Days5Info extends React.Component {
     constructor(props) {
         super(props);

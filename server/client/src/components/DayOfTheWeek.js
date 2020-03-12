@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 import { getIcon } from './ActualWeather';
 import { setDay } from '../actions/index';
 
-import '../styles/dayOfTheWeek.scss';
-
 
 class DayOfTheWeek extends React.Component {
     render() {
         return (
-            <div className='DayOfTheWeek' onClick={e => this.props.setDay(this.props.day)} style={this.props.day == this.props.actualDay ? { color: 'goldenrod', border: "3px solid goldenrod" } : {}}>
+            <div className='DayOfTheWeek' onClick={e => this.props.setDay(this.props.day)} style={this.props.day === this.props.actualDay ? { color: 'goldenrod', border: "3px solid goldenrod" } : {}}>
                 <div className='DayOfTheWeek_day'>
                     {this.renderDay()}
                 </div>

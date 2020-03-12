@@ -1,7 +1,8 @@
 import React from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
-import '../styles/app.scss';
+
+import '../styles/style.scss';
 
 import Header from './Header';
 import Dashboard from './Dashboard';

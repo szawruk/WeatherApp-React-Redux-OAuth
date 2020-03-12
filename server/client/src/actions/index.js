@@ -12,7 +12,6 @@ export const fetchUser = () => async dispatch => {
 }
 
 export const setCity = (city) => dispatch => {
-    console.log('setCity akcjaaaaaa');
     let polishName = city;
 
     city = changePolishWord(city);
@@ -20,7 +19,6 @@ export const setCity = (city) => dispatch => {
     axios.post('/api/city', { city })
         .then(response => {
             if (response.status === 200) {
-                console.log("witam z setCXity: mamy 200");
                 dispatch({
                     type: SET_CITY,
                     payload: polishName
