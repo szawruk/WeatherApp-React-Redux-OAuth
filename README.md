@@ -4,4 +4,4 @@ Simple weather app done mainly with the help of React, Redux, OAuth, mongoDB Atl
 
 The API I used to fetch the weather is AccuWeatherAPI.
 
-Check it out on Heroku! https://frozen-bastion-54218.herokuapp.com
+Check it out on Heroku! https://frozen-bastion-54218.herokuapp.com (please be patience, heroku needs a few seconds to boot up)
